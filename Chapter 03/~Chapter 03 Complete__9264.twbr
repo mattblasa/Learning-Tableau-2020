@@ -1,0 +1,2870 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.1018.2303                               -->
+<workbook source-build='2020.3.2 (20203.20.1018.2303)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <_.fcp.MarkAnimation.true...style-rule element='animation'>
+      <format attr='animation-on' value='ao-off' />
+    </_.fcp.MarkAnimation.true...style-rule>
+  </style>
+  <datasources>
+    <datasource caption='Hospital Visits &amp; Revenue' inline='true' name='federated.1ecz2940jqf2hr11wluc41om4p3i' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Hospital Visits' name='textscan.1sty3ta1g2kmmm174tjda0j54ze0'>
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/jmilligan/Documents/Work/VizPainter/Books/Learning Tableau 2020/Learning Tableau/Chapter 03/Hospital Visits.csv' dataRefreshTime='' directory='Data/Chapter 03' filename='Hospital Visits.csv' interpretationMode='8' password='' port='0' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='Hospital Goals' name='textscan.1g9a3x410evhrv1686m9e06syvwl'>
+            <connection class='textscan' directory='Data/Chapter 03' filename='Hospital Goals.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1g9a3x410evhrv1686m9e06syvwl' name='Hospital Goals.csv' table='[C:\Users\jmilligan\Documents\Work\VizPainter\Books\Learning Tableau 2020\Learning Tableau\Chapter 03\Hospital Goals#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Department' ordinal='0' />
+            <column datatype='integer' name='Goal' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1sty3ta1g2kmmm174tjda0j54ze0' name='Hospital Visits.csv' table='[Hospital Visits#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='Row_ID' ordinal='0' />
+              <column datatype='date' name='Date of Admit' ordinal='1' />
+              <column datatype='date' name='Date of Discharge' ordinal='2' />
+              <column datatype='string' name='Doctor' ordinal='3' />
+              <column datatype='string' name='Hospital Branch' ordinal='4' />
+              <column datatype='string' name='Department Type' ordinal='5' />
+              <column datatype='string' name='Department' ordinal='6' />
+              <column datatype='integer' name='Patient ID' ordinal='7' />
+              <column datatype='string' name='Patient Name' ordinal='8' />
+              <column datatype='string' name='Patient Risk Profile' ordinal='9' />
+              <column datatype='integer' name='Revenue' ordinal='10' />
+              <column datatype='integer' name='Minutes to Service' ordinal='11' />
+              <column datatype='integer' name='Number of Patient Visits' ordinal='12' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1g9a3x410evhrv1686m9e06syvwl' name='Hospital Goals.csv' table='[C:\Users\jmilligan\Documents\Work\VizPainter\Books\Learning Tableau 2020\Learning Tableau\Chapter 03\Hospital Goals#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Department' ordinal='0' />
+              <column datatype='integer' name='Goal' ordinal='1' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Date of Admit]' value='[Hospital Visits.csv].[Date of Admit]' />
+          <map key='[Date of Discharge]' value='[Hospital Visits.csv].[Date of Discharge]' />
+          <map key='[Department (Hospital Goals.csv)]' value='[Hospital Goals.csv].[Department]' />
+          <map key='[Department Type]' value='[Hospital Visits.csv].[Department Type]' />
+          <map key='[Department]' value='[Hospital Visits.csv].[Department]' />
+          <map key='[Doctor]' value='[Hospital Visits.csv].[Doctor]' />
+          <map key='[Goal]' value='[Hospital Goals.csv].[Goal]' />
+          <map key='[Hospital Branch]' value='[Hospital Visits.csv].[Hospital Branch]' />
+          <map key='[Minutes to Service]' value='[Hospital Visits.csv].[Minutes to Service]' />
+          <map key='[Number of Patient Visits]' value='[Hospital Visits.csv].[Number of Patient Visits]' />
+          <map key='[Patient ID]' value='[Hospital Visits.csv].[Patient ID]' />
+          <map key='[Patient Name]' value='[Hospital Visits.csv].[Patient Name]' />
+          <map key='[Patient Risk Profile]' value='[Hospital Visits.csv].[Patient Risk Profile]' />
+          <map key='[Revenue]' value='[Hospital Visits.csv].[Revenue]' />
+          <map key='[Row_ID]' value='[Hospital Visits.csv].[Row_ID]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Hospital Goals.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Row_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Row_ID]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Row_ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date of Admit</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date of Admit]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Date of Admit</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date of Discharge</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date of Discharge]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Date of Discharge</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Doctor</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Doctor]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Doctor</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hospital Branch</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Hospital Branch]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Hospital Branch</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Department Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Department Type]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Department Type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Department</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Department]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Department</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Patient ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Patient ID]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Patient ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Patient Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Patient Name]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Patient Name</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Patient Risk Profile</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Patient Risk Profile]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Patient Risk Profile</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Revenue</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Revenue]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Revenue</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Minutes to Service</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Minutes to Service]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Minutes to Service</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of Patient Visits</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of Patient Visits]</local-name>
+            <parent-name>[Hospital Visits.csv]</parent-name>
+            <remote-alias>Number of Patient Visits</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Department</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Department (Hospital Goals.csv)]</local-name>
+            <parent-name>[Hospital Goals.csv]</parent-name>
+            <remote-alias>Department</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Goal</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Goal]</local-name>
+            <parent-name>[Hospital Goals.csv]</parent-name>
+            <remote-alias>Goal</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Goal Met?' datatype='boolean' name='[Calculation_410671993744990208]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='SUM([Revenue]) &gt;= SUM([Goal])' />
+      </column>
+      <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+      </column>
+      <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Department (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[Department]' default='&quot;Other&quot;' new-bin='true'>
+          <bin default-name='true' value='&quot;ICU &amp; Neonatal&quot;'>
+            <value>&quot;ICU&quot;</value>
+            <value>&quot;Neonatal&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+      <column aggregation='None' datatype='integer' name='[Minutes to Service (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='0' formula='[Minutes to Service]' peg='0' size='2' />
+      </column>
+      <column datatype='integer' name='[Minutes to Service]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Patient ID]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Patient Risk Profile]' role='dimension' type='nominal' />
+      <column caption='Row ID' datatype='integer' name='[Row_ID]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Hospital Goals.csv' datatype='table' name='[__tableau_internal_object_id__].[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Hospital Visits.csv' datatype='table' name='[__tableau_internal_object_id__].[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]' role='measure' type='quantitative' />
+      <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Patient Risk Profile]' derivation='None' name='[none:Patient Risk Profile:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_410671993744990208]' derivation='User' name='[usr:Calculation_410671993744990208:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Datasources/Hospital Visits &amp; Revenue.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='12/31/2019 05:38:59 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752' table='[Extract].[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF' table='[Extract].[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]' type='table' />
+            <relation name='Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752' table='[Extract].[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Date of Admit]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Date of Admit]' />
+            <map key='[Date of Discharge]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Date of Discharge]' />
+            <map key='[Department (Hospital Goals.csv)]' value='[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752].[Department]' />
+            <map key='[Department Type]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Department Type]' />
+            <map key='[Department]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Department]' />
+            <map key='[Doctor]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Doctor]' />
+            <map key='[Goal]' value='[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752].[Goal]' />
+            <map key='[Hospital Branch Branch]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Hospital Branch Branch]' />
+            <map key='[Hospital Branch]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Hospital Branch]' />
+            <map key='[Minutes to Service]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Minutes to Service]' />
+            <map key='[Number of Patient Visits]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Number of Patient Visits]' />
+            <map key='[Patient ID]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Patient ID]' />
+            <map key='[Patient Name]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Patient Name]' />
+            <map key='[Patient Risk Profile]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Patient Risk Profile]' />
+            <map key='[Revenue]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Revenue]' />
+            <map key='[Row_ID]' value='[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF].[Row_ID]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='Hospital Visits &amp; Revenue' increment-value='%null%' refresh-type='create' rows-inserted='1' timestamp-start='2019-12-31 17:38:59.735' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Hospital Branch Branch</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hospital Branch Branch]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Hospital Branch Branch</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Row_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Row_ID]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Row_ID</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6334</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date of Admit</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date of Admit]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Date of Admit</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>848</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date of Discharge</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date of Discharge]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Date of Discharge</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>860</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Doctor</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Doctor]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Doctor</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hospital Branch</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Hospital Branch]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Hospital Branch</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Department Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Department Type]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Department Type</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Department</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Department]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Department</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Patient ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Patient ID]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Patient ID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1862</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Patient Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Patient Name]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Patient Name</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1856</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Patient Risk Profile</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Patient Risk Profile]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Patient Risk Profile</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Revenue</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Revenue]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Revenue</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>726</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Minutes to Service</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Minutes to Service]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Minutes to Service</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of Patient Visits</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Number of Patient Visits]</local-name>
+              <parent-name>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</parent-name>
+              <remote-alias>Number of Patient Visits</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Hospital Visits.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Department</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Department (Hospital Goals.csv)]</local-name>
+              <parent-name>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</parent-name>
+              <remote-alias>Department</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Hospital Goals.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Goal</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Goal]</local-name>
+              <parent-name>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</parent-name>
+              <remote-alias>Goal</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Hospital Goals.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Department Type:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;General&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Specialty&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Labs&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Intensive Care&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Calculation_410671993744990208:nk]' type='palette'>
+            <map to='#a7601d'>
+              <bucket>true</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>false</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[yr:Date of Admit:ok]' type='palette'>
+            <map to='#bab0ac'>
+              <bucket>2018</bucket>
+            </map>
+            <map to='#ca7423'>
+              <bucket>2019</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Hospital Branch:nk]' type='palette'>
+            <map to='#682829'>
+              <bucket>&quot;South&quot;</bucket>
+            </map>
+            <map to='#77b9ff'>
+              <bucket>&quot;Central&quot;</bucket>
+            </map>
+            <map to='#ad631e'>
+              <bucket>&quot;East&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Patient Risk Profile:nk]' type='palette'>
+            <map to='#b66820'>
+              <bucket>&quot;High&quot;</bucket>
+            </map>
+            <map to='#d6cbc6'>
+              <bucket>&quot;Low&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Hospital Goals.csv' id='Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752'>
+            <properties context=''>
+              <relation connection='textscan.1g9a3x410evhrv1686m9e06syvwl' name='Hospital Goals.csv' table='[C:\Users\jmilligan\Documents\Work\VizPainter\Books\Learning Tableau 2020\Learning Tableau\Chapter 03\Hospital Goals#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Department' ordinal='0' />
+                  <column datatype='integer' name='Goal' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752' table='[Extract].[Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752]' type='table' />
+            </properties>
+          </object>
+          <object caption='Hospital Visits.csv' id='Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF'>
+            <properties context=''>
+              <relation connection='textscan.1sty3ta1g2kmmm174tjda0j54ze0' name='Hospital Visits.csv' table='[Hospital Visits#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Row_ID' ordinal='0' />
+                  <column datatype='date' name='Date of Admit' ordinal='1' />
+                  <column datatype='date' name='Date of Discharge' ordinal='2' />
+                  <column datatype='string' name='Doctor' ordinal='3' />
+                  <column datatype='string' name='Hospital Branch' ordinal='4' />
+                  <column datatype='string' name='Department Type' ordinal='5' />
+                  <column datatype='string' name='Department' ordinal='6' />
+                  <column datatype='integer' name='Patient ID' ordinal='7' />
+                  <column datatype='string' name='Patient Name' ordinal='8' />
+                  <column datatype='string' name='Patient Risk Profile' ordinal='9' />
+                  <column datatype='integer' name='Revenue' ordinal='10' />
+                  <column datatype='integer' name='Minutes to Service' ordinal='11' />
+                  <column datatype='integer' name='Number of Patient Visits' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF' table='[Extract].[Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Department]' />
+              <expression op='[Department (Hospital Goals.csv)]' />
+            </expression>
+            <first-end-point object-id='Hospital Visits.csv_8795B7A07BAC41D9A10F030E6E877BFF' />
+            <second-end-point guaranteed-value='true' object-id='Hospital Goals.csv_0BF78834E5B84B15B33193F64700C752' unique-key='true' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Average Length of Stay by Doctor'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Avg' name='[avg:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Department Type:nk]' />
+              <groupfilter function='member' level='[none:Department Type:nk]' member='&quot;Labs&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' value-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5052486658096313' />
+                <format attr='mark-transparency' value='214' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]</cols>
+      </table>
+      <simple-id uuid='{F1B1DC3E-7A4E-4887-8C68-FA40B6869A52}' />
+    </worksheet>
+    <worksheet name='Average Length of Stay by Doctor (Box Plot)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Avg' name='[avg:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Department Type:nk]' />
+              <groupfilter function='member' level='[none:Department Type:nk]' member='&quot;Labs&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5052486658096313' />
+                <format attr='mark-transparency' value='214' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]</cols>
+      </table>
+      <simple-id uuid='{1D17CF7F-46EA-4B4C-98CF-A3E6CE5390C3}' />
+    </worksheet>
+    <worksheet name='Average Length of Stay by Doctor (jittering)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column caption='INDEX()' datatype='integer' name='[Calculation_998673220406177796]' role='measure' type='quantitative' user:unnamed='Average Length of Stay by Doctor (jittering)'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Avg' name='[avg:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_998673220406177796]' derivation='User' name='[usr:Calculation_998673220406177796:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Doctor]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Department Type:nk]' />
+              <groupfilter function='member' level='[none:Department Type:nk]' member='&quot;Labs&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[usr:Calculation_998673220406177796:qk:3]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='vertical-align' id='refline0' value='top' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='1' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' value-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5052486658096313' />
+                <format attr='mark-transparency' value='214' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk] * [federated.1ecz2940jqf2hr11wluc41om4p3i].[usr:Calculation_998673220406177796:qk:3])</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[avg:Calculation_410671994009206789:qk]</cols>
+      </table>
+      <simple-id uuid='{87EBF98F-08F8-4969-8ABC-0F9C0525DAD4}' />
+    </worksheet>
+    <worksheet name='Built-in Date Hierarchy'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Quarter' name='[qr:Date of Admit:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</rows>
+        <cols>([federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok] / [federated.1ecz2940jqf2hr11wluc41om4p3i].[qr:Date of Admit:ok])</cols>
+      </table>
+      <simple-id uuid='{B55FEC20-01C8-4F5B-9488-A3397EFE9F70}' />
+    </worksheet>
+    <worksheet name='Date Parts'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;&#10;</run>
+            <run fontname='Tableau Regular' fontsize='11'>This view uses </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>Month</run>
+            <run fontname='Tableau Regular' fontsize='11'> as a </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>Date Part</run>
+            <run fontname='Tableau Regular' fontsize='11'>.  So, for example, there have been </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>545</run>
+            <run fontname='Tableau Regular' fontsize='11'> patient visits in </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>November</run>
+            <run fontname='Tableau Regular' fontsize='11'> - any November of any year in the data (in this case  2018 and  2019).</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text />
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Month' name='[mn:Date of Admit:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]' value='180' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</cols>
+      </table>
+      <simple-id uuid='{DE171868-4CAE-4373-B191-7CC7F850CF95}' />
+    </worksheet>
+    <worksheet name='Date Values'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;&#10;</run>
+            <run fontname='Tableau Regular' fontsize='11'>This view uses </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>Month</run>
+            <run fontname='Tableau Regular' fontsize='11'> as a </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>Date Value</run>
+            <run fontname='Tableau Regular' fontsize='11'>.  So, for example, there were 232 patient visits in </run>
+            <run bold='true' fontname='Tableau Regular' fontsize='11'>November 2018</run>
+            <run fontname='Tableau Regular' fontsize='11'>.  November 2019 is a separate header value and represents a different slice of the data.</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text />
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Month-Trunc' name='[tmn:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[tmn:Date of Admit:ok]' value='156' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[tmn:Date of Admit:ok]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</cols>
+      </table>
+      <simple-id uuid='{339E41CD-16A5-4A6E-865B-FC9110DDC24B}' />
+    </worksheet>
+    <worksheet name='Days in the Hospital'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Patient Name]' role='dimension' type='nominal' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Name]' derivation='None' name='[none:Patient Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Sum' name='[sum:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' />
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' />
+              <size column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Calculation_410671994009206789:qk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4164867A-C32B-458A-A925-267CD925FA6E}' />
+    </worksheet>
+    <worksheet name='Days in the Hospital (by branch)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Patient Name]' role='dimension' type='nominal' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Name]' derivation='None' name='[none:Patient Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Sum' name='[sum:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' />
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' />
+              <size column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Calculation_410671994009206789:qk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{6666C67B-449C-4232-8F57-6CE3A0C4703B}' />
+    </worksheet>
+    <worksheet name='ICU and Neonatal'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[Department]' default='&quot;Other&quot;' new-bin='true'>
+                <bin default-name='true' value='&quot;ICU &amp; Neonatal&quot;'>
+                  <value>&quot;ICU&quot;</value>
+                  <value>&quot;Neonatal&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Department (group)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[Department (group)]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;ICU &amp; Neonatal&quot;</value>
+                <value>&quot;ICU&quot;</value>
+                <value>730</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[Department (group)]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;ICU &amp; Neonatal&quot;</value>
+                <value>&quot;Neonatal&quot;</value>
+                <value>65</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{A53376FD-A583-4CFF-A98D-4C0F5726F98B}' />
+    </worksheet>
+    <worksheet name='Minutes to Service (histogram)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column aggregation='None' datatype='integer' name='[Minutes to Service (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[Minutes to Service]' peg='0' size='2' />
+            </column>
+            <column datatype='integer' name='[Minutes to Service]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Patient Risk Profile]' role='dimension' type='nominal' />
+            <column-instance column='[Minutes to Service]' derivation='Count' name='[cnt:Minutes to Service:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Minutes to Service (bin)]' derivation='None' name='[none:Minutes to Service (bin):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Patient Risk Profile]' derivation='None' name='[none:Patient Risk Profile:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+          </pane>
+        </panes>
+        <rows>([federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk] * [federated.1ecz2940jqf2hr11wluc41om4p3i].[cnt:Minutes to Service:qk])</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Minutes to Service (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[Minutes to Service (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{D318B008-EEBF-436F-B262-1FCFC2560070}' />
+    </worksheet>
+    <worksheet name='Number of Patient Visits (Combination Chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Month-Trunc' name='[tmn:Date of Admit:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='1' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e6e6e6' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk] + [federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk])</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[tmn:Date of Admit:qk]</cols>
+      </table>
+      <simple-id uuid='{F4607A01-040F-4AE1-B67D-582F2A4949C0}' />
+    </worksheet>
+    <worksheet name='Number of Patient Visits Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Month' name='[mn:Date of Admit:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' />
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='match' />
+                <format attr='font-size' value='16' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</cols>
+        <mark-labels>
+          <mark-label id='0'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>12</value>
+                <value>249</value>
+                <value>2018</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='4' y='-26' />
+          </mark-label>
+          <mark-label id='1'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</field>
+                  <field>[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>12</value>
+                <value>303</value>
+                <value>2019</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='4' y='24' />
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{6297C623-6FAB-4D29-8E48-48C65533C960}' />
+    </worksheet>
+    <worksheet name='Number of Patient Visits by Department (Bar Chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</cols>
+      </table>
+      <simple-id uuid='{5A1A4E96-52EB-4B06-A215-4541CFC58B93}' />
+    </worksheet>
+    <worksheet name='Patient Admissions by Day (Heat Map)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Day' name='[dy:Date of Admit:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Date of Admit]' derivation='Month' name='[mn:Date of Admit:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' palette='red_gold_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[mn:Date of Admit:ok]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[dy:Date of Admit:ok]</cols>
+      </table>
+      <simple-id uuid='{8629AC5F-CE45-46F9-A760-58537AA02FAD}' />
+    </worksheet>
+    <worksheet name='Patient Risk'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Patient Risk Profile]' role='dimension' type='nominal' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Risk Profile]' derivation='None' name='[none:Patient Risk Profile:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='44' />
+            <format attr='width' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' value='116' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</cols>
+      </table>
+      <simple-id uuid='{52BB5F89-1F2B-43A2-B5F2-8B8922351A2F}' />
+    </worksheet>
+    <worksheet name='Patient Risk (Percent per Department Type)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Patient Risk Profile]' role='dimension' type='nominal' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Risk Profile]' derivation='None' name='[none:Patient Risk Profile:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[pcto:sum:Number of Patient Visits:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Patient Risk Profile]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:2]' value='p0%' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='44' />
+            <format attr='width' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' value='116' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' />
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:2]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:2]</cols>
+      </table>
+      <simple-id uuid='{8C8EC01B-7C5C-4473-9A65-F4AC25988C44}' />
+    </worksheet>
+    <worksheet name='Patient Risk (side-by side views)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Patient Risk Profile]' role='dimension' type='nominal' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Risk Profile]' derivation='None' name='[none:Patient Risk Profile:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[pcto:sum:Number of Patient Visits:qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Patient Risk Profile]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='44' />
+            <format attr='width' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' value='116' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:2]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>([federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk] + [federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:2])</cols>
+      </table>
+      <simple-id uuid='{480EE638-B932-4661-BC08-ABC4BD983F3D}' />
+    </worksheet>
+    <worksheet name='Patient Visits (Gantt Chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Days in Hospital' datatype='integer' name='[Calculation_410671994009206789]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Date of Admit], [Date of Discharge])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Date of Discharge]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Doctor]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Patient Name]' role='dimension' type='nominal' />
+            <column-instance column='[Date of Admit]' derivation='None' name='[none:Date of Admit:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Doctor]' derivation='None' name='[none:Doctor:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Patient Name]' derivation='None' name='[none:Patient Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_410671994009206789]' derivation='Sum' name='[sum:Calculation_410671994009206789:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]'>
+            <groupfilter function='member' level='[none:Department:nk]' member='&quot;ER&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]'>
+            <groupfilter function='member' level='[yr:Date of Admit:ok]' member='2019' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</column>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Calculation_410671994009206789:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Doctor:nk] / [federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Name:nk])</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Date of Admit:qk]</cols>
+      </table>
+      <simple-id uuid='{723A6680-8B32-46D3-83FD-38F5D0D4BDD0}' />
+    </worksheet>
+    <worksheet name='Patient Visits over Time (area chart - percent of total)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[pcto:sum:Number of Patient Visits:qk:5]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Hospital Branch]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Date of Admit]' derivation='Month-Trunc' name='[tmn:Date of Admit:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Number of Patient Visits:qk:5]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[tmn:Date of Admit:qk]</cols>
+      </table>
+      <simple-id uuid='{C20B2911-3EA7-4DCE-AC8B-960CD04FF84B}' />
+    </worksheet>
+    <worksheet name='Patient Visits over Time (area chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Month-Trunc' name='[tmn:Date of Admit:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[tmn:Date of Admit:qk]</cols>
+      </table>
+      <simple-id uuid='{F33755C6-8232-4322-BD2D-CF9FA171A945}' />
+    </worksheet>
+    <worksheet name='Revenue Per Department (Bullet Chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column caption='Goal Met?' datatype='boolean' name='[Calculation_410671993744990208]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='SUM([Revenue]) &gt;= SUM([Goal])' />
+            </column>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Goal]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Goal]' derivation='Sum' name='[sum:Goal:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_410671993744990208]' derivation='User' name='[usr:Calculation_410671993744990208:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]'>
+            <groupfilter function='member' level='[yr:Date of Admit:ok]' member='2019' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Goal:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='10' />
+            <format attr='div-level' scope='cols' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[usr:Calculation_410671993744990208:nk]' />
+              <lod column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Goal:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-cell' value-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Goal:qk]' z-order='2' />
+            <reference-line axis-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]' enable-instant-analytics='true' fill-above='true' fill-below='true' formula='average' id='refline1' label-type='none' percentage-bands='true' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Goal:qk]' z-order='1'>
+              <reference-line-value percentage='60' />
+              <reference-line-value percentage='80' />
+            </reference-line>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{991E0623-37AE-43F1-AD80-C164F4A71110}' />
+    </worksheet>
+    <worksheet name='Revenue and Patient Visits by Department'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Department]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Patient Visits]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Department]' derivation='None' name='[none:Department:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Patient Visits]' derivation='Sum' name='[sum:Number of Patient Visits:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{BB2691C9-FEC0-445C-96CF-B43D52CAC7C7}' />
+    </worksheet>
+    <worksheet name='Revenue by Branch (Pie Chart)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='string' name='[Hospital Branch]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Hospital Branch]' derivation='None' name='[none:Hospital Branch:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[pcto:sum:Revenue:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]' value='c&quot;$&quot;#,##0,,M;(&quot;$&quot;#,##0,,M)' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' />
+              <wedge-size column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]' />
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' />
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]' />
+              <text column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[pcto:sum:Revenue:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='size' value='1.5052486658096313' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2169FB86-23B0-4593-8044-B29551F44ECC}' />
+    </worksheet>
+    <worksheet name='Year over Year Revenue (Bar-in-Bar)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Hospital Visits &amp; Revenue' name='federated.1ecz2940jqf2hr11wluc41om4p3i' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ecz2940jqf2hr11wluc41om4p3i'>
+            <column datatype='date' name='[Date of Admit]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Department Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Revenue]' role='measure' type='quantitative' />
+            <column-instance column='[Department Type]' derivation='None' name='[none:Department Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Revenue]' derivation='Sum' name='[sum:Revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date of Admit]' derivation='Year' name='[yr:Date of Admit:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' direction='ASC'>
+            <dictionary>
+              <bucket>2019</bucket>
+              <bucket>2018</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' field-type='ordinal' max-size='1' min-size='0.268749' type='catsize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' />
+              <size column='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.1162829399108887' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]</rows>
+        <cols>[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{8749A499-0D35-479D-B9FF-60AAC9196694}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Workbook Introduction'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='5' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='empty' _.fcp.SetMembershipControl.true...type-v2='empty' fixed-size='92' h='98000' id='6' is-fixed='true' w='10000' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='8' param='vert' w='78400' x='10800' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='empty' _.fcp.SetMembershipControl.true...type-v2='empty' h='31125' id='9' w='78400' x='10800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='text' _.fcp.SetMembershipControl.true...type-v2='text' forceUpdate='true' h='31875' id='3' w='78400' x='10800' y='32125'>
+                <formatted-text>
+                  <run bold='true' fontalignment='1' fontcolor='#333333' fontsize='36'>Learning Tableau 2020</run>
+                  <run fontalignment='1'>Æ&#10;&#10;</run>
+                  <run fontalignment='1' fontcolor='#333333' fontsize='26'>Chapter 3: Moving Beyond Basic Visualizations</run>
+                  <run fontalignment='1'>Æ&#10;&#10;</run>
+                  <run>Æ&#10;</run>
+                  <run fontcolor='#333333' fontsize='14'>This is the </run>
+                  <run bold='true' fontcolor='#333333' fontsize='14'>COMPLETE </run>
+                  <run fontcolor='#333333' fontsize='14'>workbook.  Use this workbook  to check your work and see the end-resuls of examples in the book. Use the starter workbook to work through examples on your own.</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='empty' _.fcp.SetMembershipControl.true...type-v2='empty' h='31125' id='10' w='78400' x='10800' y='64000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='text' _.fcp.SetMembershipControl.true...type-v2='text' forceUpdate='true' h='3875' id='11' w='78400' x='10800' y='95125'>
+                <formatted-text>
+                  <run fontcolor='#ff0000' fontsize='12'>↓ Navigate to the examples using the tabs below</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='empty' _.fcp.SetMembershipControl.true...type-v2='empty' fixed-size='92' h='98000' id='7' is-fixed='true' w='10000' x='89200' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='75' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='74' param='vert' w='98400' x='800' y='1000'>
+                <zone _.fcp.SetMembershipControl.false...type='text' _.fcp.SetMembershipControl.true...type-v2='text' forceUpdate='true' h='31875' id='3' w='78400' x='10800' y='32125'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#333333' fontsize='36'>Learning Tableau 2020</run>
+                    <run fontalignment='1'>Æ&#10;&#10;</run>
+                    <run fontalignment='1' fontcolor='#333333' fontsize='26'>Chapter 3: Moving Beyond Basic Visualizations</run>
+                    <run fontalignment='1'>Æ&#10;&#10;</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#333333' fontsize='14'>This is the </run>
+                    <run bold='true' fontcolor='#333333' fontsize='14'>COMPLETE </run>
+                    <run fontcolor='#333333' fontsize='14'>workbook.  Use this workbook  to check your work and see the end-resuls of examples in the book. Use the starter workbook to work through examples on your own.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='text' _.fcp.SetMembershipControl.true...type-v2='text' forceUpdate='true' h='3875' id='11' w='78400' x='10800' y='95125'>
+                  <formatted-text>
+                    <run fontcolor='#ff0000' fontsize='12'>↓ Navigate to the examples using the tabs below</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D31015BC-DFE2-447B-8276-604E4A43DA37}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' name='Workbook Introduction'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{253252DE-4EEE-48FD-AFFE-9E4AA16324B0}' />
+    </window>
+    <window class='worksheet' name='Number of Patient Visits by Department (Bar Chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{96544071-7D97-4850-8DE0-54B47CDF6AED}' />
+    </window>
+    <window class='worksheet' name='Revenue Per Department (Bullet Chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[usr:Calculation_410671993744990208:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{30C4D5BB-CA6F-4BEC-81ED-F11A1AD22B37}' />
+    </window>
+    <window class='worksheet' name='Year over Year Revenue (Bar-in-Bar)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{960CEA7D-D3F6-4ECD-BE57-8E4BB2AE37F7}' />
+    </window>
+    <window class='worksheet' name='ICU and Neonatal'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[Department (group)]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E58467DB-E213-42DA-B05E-A751E1DF15B3}' />
+    </window>
+    <window class='worksheet' name='Built-in Date Hierarchy'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C3FDA2E2-1B55-4F4A-BA9A-AC41B393742C}' />
+    </window>
+    <window class='worksheet' name='Date Parts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{39435F00-A05C-445B-BD2E-979429EB794F}' />
+    </window>
+    <window class='worksheet' name='Date Values'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2BDE3447-CB9D-4739-90D5-884B14DA0766}' />
+    </window>
+    <window class='worksheet' name='Number of Patient Visits Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[yr:Date of Admit:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{7EC3FF46-4CBD-4EC2-9BAE-118F7DFD4FDE}' />
+    </window>
+    <window class='worksheet' name='Patient Admissions by Day (Heat Map)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[sum:Number of Patient Visits:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{FB4C7ACD-C844-486C-ABCF-4C8002B0C49A}' />
+    </window>
+    <window class='worksheet' name='Patient Visits (Gantt Chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1AB2E50E-7352-4759-9866-2DE810EC5F85}' />
+    </window>
+    <window class='worksheet' name='Patient Risk'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{271646C5-4869-461A-B214-4F9DFB3DC603}' />
+    </window>
+    <window class='worksheet' name='Patient Risk (Percent per Department Type)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D3DBB6CB-6AD0-44B0-B7A3-CDE8D8103CE5}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Patient Risk (side-by side views)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='1' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Patient Risk Profile:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{EF480AD5-BBFC-48AF-86F1-251595F8157E}' />
+    </window>
+    <window class='worksheet' name='Days in the Hospital'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]&#10;[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{588EC98D-0DE4-401B-B9E5-B9A45AA655D2}' />
+    </window>
+    <window class='worksheet' name='Days in the Hospital (by branch)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]&#10;[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{2FDE4DDC-1BF8-47D6-8C20-B547EC5A4A93}' />
+    </window>
+    <window class='worksheet' name='Patient Visits over Time (area chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BC68AC12-1663-46DC-8DED-724CEF54DB48}' />
+    </window>
+    <window class='worksheet' name='Patient Visits over Time (area chart - percent of total)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D92FF6B0-F86E-46FC-A4B7-D6399B821DF1}' />
+    </window>
+    <window class='worksheet' name='Revenue by Branch (Pie Chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{8D8AC872-1DCB-49B1-8F38-F36821E604BC}' />
+    </window>
+    <window class='worksheet' name='Average Length of Stay by Doctor'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D227206F-1BA1-4C36-B9E9-6D9064C73833}' />
+    </window>
+    <window class='worksheet' name='Average Length of Stay by Doctor (jittering)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D13B5EA5-B8DF-4FA6-AFF1-E051AB928EFA}' />
+    </window>
+    <window class='worksheet' name='Average Length of Stay by Doctor (Box Plot)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Department Type:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{8360E6BC-B322-4E80-BBBF-957985E59687}' />
+    </window>
+    <window class='worksheet' name='Minutes to Service (histogram)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D83DDD9A-4C91-45EC-BF58-69E9F78B4A44}' />
+    </window>
+    <window class='worksheet' name='Revenue and Patient Visits by Department'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8BFF68A8-F615-411C-9BAE-9B063A61ABD0}' />
+    </window>
+    <window class='worksheet' name='Number of Patient Visits (Combination Chart)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='2' param='[federated.1ecz2940jqf2hr11wluc41om4p3i].[none:Hospital Branch:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7F7BA89F-9829-4CBC-87C3-2974BF217625}' />
+    </window>
+  </windows>
+</workbook>
